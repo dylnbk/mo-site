@@ -1,44 +1,18 @@
 ---
-title: Blog
+title: Mo Patel
 layout: layouts/base.njk
-eleventyExcludeFromCollections: true
-pagination:
-  data: collections.posts
-  size: 5
-  alias: posts
-  reverse: true
 ---
 
-<ul>
 
-    {% for post in posts %}
-        <div class="outer">
-            <div class="container">
-                <div class="box">
-                    <strong>
-                        <a href="{{ post.url | url }}">{{ post.data.title }}</a>
-                    </strong>
-                    <br>
-                    <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
-                    <br>
-                    <span>
-                        {{ post.data.description }}
-                    </span>
-                </div>
-            </div>
+<div class="row">
+    {% for pics in collections.photos | slice(4) %}
+        <div class="column">
+        {% for pic in pics | reverse %}
+            <video class="front-image" loop autoplay>
+                <source src="{{ pic.data.artVideo }}" type="video/mp4">
+                Your browser does not support video.
+            </video>
+        {% endfor %}
         </div>
     {% endfor %}
-
-</ul>
-
-<nav>
-  <ol class="inline-li">
-    <li>{% if page.url != pagination.href.first %}<a href="{{ pagination.href.first }}">⟪</a>{% else %}⟪{% endif %}</li>
-    <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">⟨</a>{% else %}⟨{% endif %}</li>
-{%- for pageEntry in pagination.pages %}
-    <li><a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>{{ loop.index }}</a></li>
-{%- endfor %}
-    <li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">⟩</a>{% else %}⟩{% endif %}</li>
-    <li>{% if page.url != pagination.href.last %}<a href="{{ pagination.href.last }}">⟫</a>{% else %}⟫{% endif %}</li>
-  </ol>
-</nav>
+</div>

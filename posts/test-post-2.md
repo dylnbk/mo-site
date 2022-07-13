@@ -1,9 +1,5 @@
 ---
 layout: layouts/post.njk
-title: Test post 9
-description: Just a test
-date: 2022-05-25
-featuredImage: /media/uploads/test.jpg 
+title: B
+artVideo: /media/uploads/bluedot_b.mp4 
 ---
-
-Text for the post is here
