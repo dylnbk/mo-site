@@ -14,13 +14,16 @@
     </head>
 
     <body>
-        <div class="heading">
-            <h1>
-                Mo Patel
-            </h1>
+        <div class="main">
+            <div class="nav">
+                <h1>
+                    Mo Patel
+                </h1>
+            </div>
+            <div class="content">
+                {{ content | safe }}
+            </div>
         </div>
-
-        {{ content | safe }}
     
     </body>
 

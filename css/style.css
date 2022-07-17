@@ -27,13 +27,6 @@ ol li {
     display: inline;
 }
 
-.heading {
-    display: grid;
-    place-content: center;
-    font-family: 'Roboto', sans-serif;
-    margin: 5vh 0;
-}
-
 .post-title {
     display: grid;
     place-content: center;
@@ -69,12 +62,6 @@ ol li {
     place-content: center;
     display: grid;
     grid-template-columns: auto;
-}
-
-nav {
-    display: grid;
-    place-content: center;
-    margin: 5vh 0;
 }
 
 .featured-image {
@@ -113,6 +100,26 @@ nav {
     padding: 2px 5px;
 }
 
+.main {
+    place-content: center;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.content {
+    position: relative;
+    padding: 1rem 1rem;
+}
+
+.nav {
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    padding: 1rem 1rem;
+}
 
 @media screen and (max-width: 1024px) {
 
